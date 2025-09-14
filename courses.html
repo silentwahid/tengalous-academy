@@ -5,11 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-  <title>Tengalous Academy - Home</title>
+  <title>Tengalous Academy - Courses</title>
+  <style>
+  
+    /* Hero */
+    .hero {
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #004aad, #5de0e6, #00bf63);
+      background-size: 300% 300%;
+      animation: gradientFlow 12s ease infinite;
+      color: white;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    @keyframes gradientFlow {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Courses Section */
+    .courses {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    .courses h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #004aad;
+    }
+
+    .courses-container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .course-card {
+      flex: 1 1 300px;
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+
+    .course-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00bf63;
+    }
+
+    .course-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #004aad;
+    }
+
+    .course-card p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 30px;
+      background: #004aad;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00bf63;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navbar -->
+   <!-- Navbar -->
   <nav>
     <div><img class="logo" src="logo.png" alt="Tengalous Logo"></div>
     <ul>
@@ -25,105 +120,34 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Welcome to Tengalous Academy</h1>
-      <p>Empowering Future Leaders through Quality Education and Professional Formations.</p>
-      <a href="#courses" class="btn">Explore Programs</a>
-    </div>
+    <h1>Our Courses</h1>
   </section>
 
+  <!-- Courses Section -->
+  <section class="courses">
+    <h2>University Courses</h2>
+    <div class="courses-container">
 
+      <!-- Math -->
+      <div class="course-card">
+        <div class="course-icon">📐</div>
+        <h3>Mathematics</h3>
+        <p>Comprehensive math courses covering algebra, calculus, statistics, and advanced problem-solving for university students.</p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
 
+      <!-- Physics -->
+      <div class="course-card">
+        <div class="course-icon">⚛️</div>
+        <h3>Physics</h3>
+        <p>Explore the world of mechanics, thermodynamics, quantum physics, and more with our expert-led physics programs.</p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
 
-<!-- About Section -->
-<section class="about">
-  <div class="about-container">
-    <div class="about-text">
-      <h2>About <span>Tengalous Academy</span></h2>
-      <p>
-        Tengalous Academy is dedicated to empowering students with 
-        high-quality university courses and professional formations.  
-        Our mission is to create an inspiring learning environment where 
-        knowledge meets innovation.  
-      </p>
-      <p>
-        Guided by our core values of <strong>Excellence</strong>, 
-        <strong>Integrity</strong>, and <strong>Growth</strong>, 
-        we prepare learners to succeed academically and professionally.  
-      </p>
     </div>
-    <div class="about-visual">
-      <div class="blob blob1"></div>
-      <div class="blob blob2"></div>
-      <div class="blob blob3"></div>
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- Highlights / Stats Section -->
-<section class="stats" id="highlights">
-  <div class="stats-container">
-    <div class="stat-card">
-      <h3 class="counter" data-target="1200">0</h3>
-      <p>Students Trained</p>
-    </div>
-    <div class="stat-card">
-      <h3 class="counter" data-target="200">0</h3>
-      <p>Programs Offered</p>
-    </div>
-    <div class="stat-card">
-      <h3 class="counter" data-target="95">0</h3>
-      <p>Success Rate (%)</p>
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- Quick Links Section -->
-<section class="quick-links" id="quick-links">
-  <h2>Quick Links</h2>
-  <div class="links-container">
-    <!-- Courses Card -->
-    <a href="#courses" class="link-card">
-      <div class="icon">📘</div>
-      <h3>Courses</h3>
-      <p>Explore our wide range of university courses designed to boost your academic growth.</p>
-    </a>
-
-    <!-- Formations Card -->
-    <a href="#formations" class="link-card">
-      <div class="icon">🎓</div>
-      <h3>Formations</h3>
-      <p>Discover professional training programs to gain hands-on skills for your career.</p>
-    </a>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-<!-- CTA Section -->
-<section class="cta" id="enroll">
-  <div class="cta-content">
-    <h2>Ready to Start Your Journey with Tengalous Academy?</h2>
-    <p>Join thousands of students who have transformed their future through our programs.</p>
-    <a href="#contact" class="cta-btn">Enroll Now</a>
-  </div>
-</section>
+  </section>
 
 
 
@@ -171,6 +195,9 @@
 
 
 
+
+
+  
 <script>
   const counters = document.querySelectorAll(".counter");
 
@@ -203,7 +230,6 @@
     observer.observe(counter);
   });
 </script>
-
 
   <script>
     const menuToggle = document.getElementById("menu-toggle");

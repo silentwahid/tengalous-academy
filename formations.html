@@ -6,6 +6,34 @@
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="logo.png" type="image/x-icon">
   <title>Tengalous Academy - Home</title>
+  <style>
+    
+    /* Hero */
+    .hero {
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #004aad, #5de0e6, #00bf63);
+      background-size: 300% 300%;
+      animation: gradientFlow 12s ease infinite;
+      color: white;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    @keyframes gradientFlow {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+  </style>
 </head>
 <body>
 
@@ -25,86 +53,49 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Welcome to Tengalous Academy</h1>
-      <p>Empowering Future Leaders through Quality Education and Professional Formations.</p>
-      <a href="#courses" class="btn">Explore Programs</a>
+
+
+
+
+
+
+
+ <header class="hero">
+    <h1>Professional Formations</h1> 
+    <p>Our specialized training programs are coming soon. Stay tuned!</p>
+  </header>
+
+ 
+
+
+
+
+  <section class="formations">
+    <div class="card">
+      <h2>Business Formation</h2>
+      <p>Enhance your career with professional business skills.</p>
+      <span class="coming-soon">Coming Soon</span>
+    </div>
+    <div class="card">
+      <h2>IT & Technology</h2>
+      <p>Learn cutting-edge technology and IT skills.</p>
+      <span class="coming-soon">Coming Soon</span>
+    </div>
+    <div class="card">
+      <h2>Languages</h2>
+      <p>Master new languages for professional and personal growth.</p>
+      <span class="coming-soon">Coming Soon</span>
+    </div>
+    <div class="card">
+      <h2>Vocational Training</h2>
+      <p>Hands-on training to boost your expertise in various fields.</p>
+      <span class="coming-soon">Coming Soon</span>
     </div>
   </section>
 
 
 
 
-<!-- About Section -->
-<section class="about">
-  <div class="about-container">
-    <div class="about-text">
-      <h2>About <span>Tengalous Academy</span></h2>
-      <p>
-        Tengalous Academy is dedicated to empowering students with 
-        high-quality university courses and professional formations.  
-        Our mission is to create an inspiring learning environment where 
-        knowledge meets innovation.  
-      </p>
-      <p>
-        Guided by our core values of <strong>Excellence</strong>, 
-        <strong>Integrity</strong>, and <strong>Growth</strong>, 
-        we prepare learners to succeed academically and professionally.  
-      </p>
-    </div>
-    <div class="about-visual">
-      <div class="blob blob1"></div>
-      <div class="blob blob2"></div>
-      <div class="blob blob3"></div>
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- Highlights / Stats Section -->
-<section class="stats" id="highlights">
-  <div class="stats-container">
-    <div class="stat-card">
-      <h3 class="counter" data-target="1200">0</h3>
-      <p>Students Trained</p>
-    </div>
-    <div class="stat-card">
-      <h3 class="counter" data-target="200">0</h3>
-      <p>Programs Offered</p>
-    </div>
-    <div class="stat-card">
-      <h3 class="counter" data-target="95">0</h3>
-      <p>Success Rate (%)</p>
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- Quick Links Section -->
-<section class="quick-links" id="quick-links">
-  <h2>Quick Links</h2>
-  <div class="links-container">
-    <!-- Courses Card -->
-    <a href="#courses" class="link-card">
-      <div class="icon">📘</div>
-      <h3>Courses</h3>
-      <p>Explore our wide range of university courses designed to boost your academic growth.</p>
-    </a>
-
-    <!-- Formations Card -->
-    <a href="#formations" class="link-card">
-      <div class="icon">🎓</div>
-      <h3>Formations</h3>
-      <p>Discover professional training programs to gain hands-on skills for your career.</p>
-    </a>
-  </div>
-</section>
 
 
 
@@ -114,16 +105,6 @@
 
 
 
-
-
-<!-- CTA Section -->
-<section class="cta" id="enroll">
-  <div class="cta-content">
-    <h2>Ready to Start Your Journey with Tengalous Academy?</h2>
-    <p>Join thousands of students who have transformed their future through our programs.</p>
-    <a href="#contact" class="cta-btn">Enroll Now</a>
-  </div>
-</section>
 
 
 
