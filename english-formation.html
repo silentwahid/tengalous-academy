@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>English Formation - Tengalous Academy</title>
+  <title>Formation Anglais - Tengalous Academy</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="logo.png" type="image/x-icon">
   <style>
@@ -33,7 +33,7 @@
       100% {background-position: 0% 50%;}
     }
 
-    /* Course Section */
+    /* Section Formation */
     .course-section {
       padding: 60px 20px;
       max-width: 900px;
@@ -69,7 +69,16 @@
       font-weight: bold;
     }
 
-    /* Form */
+    /* Prix */
+    .price {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #00bf63;
+      text-align: center;
+    }
+
+    /* Formulaire */
     .enroll-form {
       margin-top: 40px;
       background: #f9f9f9;
@@ -111,7 +120,7 @@
       box-shadow: 0 0 5px rgba(0,191,99,0.3);
     }
 
-    /* CTA Button */
+    /* Bouton CTA */
     .ctaa {
       text-align: center;
       margin-top: 20px;
@@ -133,41 +142,38 @@
       transform: scale(1.05);
     }
 
-    /* Animations */
+    /* Animation */
     @keyframes slideUp {
       from { transform: translateY(40px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
 
+    /* Galerie d’images */
+    .image-gallery {
+      padding: 40px 20px;
+      text-align: center;
+    }
 
+    .gallery-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
+    .gallery-container img {
+      width: 180px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-    /* Image Gallery */
-.image-gallery {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.gallery-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.gallery-container img {
-  width: 180px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-container img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-}
+    .gallery-container img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    }
 
   </style>
 </head>
@@ -175,10 +181,10 @@
 
   <!-- Navbar -->
   <nav>
-    <div><img class="logo" src="logo.png" alt="Tengalous Logo"></div>
+    <div><img class="logo" src="logo.png" alt="Logo Tengalous Academy"></div>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="courses.html">Courses</a></li>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="courses.html">Cours</a></li>
       <li><a href="formations.html" class="active">Formations</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -191,61 +197,60 @@
 
   <!-- Hero -->
   <section class="hero">
-    <h1>English Formation</h1>
-    <p>Headway 5th Edition (Beginner to Upper Intermediate)</p>
+    <h1>Formation Anglais</h1>
+    <p>Headway 5ème Édition (Débutant à Intermédiaire avancé)</p>
   </section>
 
-
-
-
-  <!-- Image Gallery -->
+  <!-- Galerie d’images -->
   <section class="image-gallery">
     <div class="gallery-container">
-      <img src="111.jpg" alt="English Class 1">
-      <img src="112.jpg" alt="English Class 2">
-      <img src="113.jpg" alt="English Class 3">
+      <img src="111.jpg" alt="Classe d’anglais 1">
+      <img src="112.jpg" alt="Classe d’anglais 2">
+      <img src="113.jpg" alt="Classe d’anglais 3">
     </div>
   </section>
 
-
-
-
-  <!-- Course Section -->
+  <!-- Section Formation -->
   <section class="course-section">
-    <h2>About this Formation</h2>
+    <h2>À propos de cette formation</h2>
     <div class="course-details">
       <ul>
-        <li>Takes learners from first steps in English to confident everyday communication, with a clear and trusted progression.</li>
-        <li>Balances all skills — speaking, listening, reading, and writing — using real-life situations and engaging topics.</li>
-        <li>Builds both grammar and vocabulary step by step, preparing learners to communicate naturally, also to succeed in exams.</li>
-        <li>Supported by modern digital resources (audio, video, interactive tools) and a solid framework that can also prepare learners for international exams like IELTS.</li>
+        <li>Amène les apprenants de leurs premiers pas en anglais à une communication quotidienne confiante.</li>
+        <li>Équilibre toutes les compétences — parler, écouter, lire et écrire — avec des situations réelles et des sujets captivants.</li>
+        <li>Construit la grammaire et le vocabulaire étape par étape pour communiquer naturellement et réussir aux examens.</li>
+        <li>Soutenu par des ressources numériques modernes (audio, vidéo, outils interactifs) et prépare aux examens internationaux comme l’IELTS.</li>
       </ul>
     </div>
 
-    <!-- Enrollment Form -->
+    <!-- Prix -->
+    <div class="price">
+      💰 Prix : 4000 DA / mois (2 séances par semaine)
+    </div>
+
+    <!-- Formulaire d’inscription -->
     <div class="enroll-form">
-      <h3>Register for this Formation</h3>
+      <h3>Inscrivez-vous à cette formation</h3>
       <form>
         <div class="form-group">
-          <label for="first-name">First Name</label>
+          <label for="first-name">Prénom</label>
           <input type="text" id="first-name" name="first-name" required>
         </div>
         <div class="form-group">
-          <label for="last-name">Last Name</label>
+          <label for="last-name">Nom</label>
           <input type="text" id="last-name" name="last-name" required>
         </div>
         <div class="form-group">
-          <label for="phone">Phone Number</label>
+          <label for="phone">Numéro de téléphone</label>
           <input type="tel" id="phone" name="phone" placeholder="+213..." required>
         </div>
         <div class="form-group">
-          <label for="academic-level">Academic Level</label>
+          <label for="academic-level">Niveau académique</label>
           <select id="academic-level" name="academic-level" required>
-            <option value="">-- Select Level --</option>
-            <option value="highschool">High School</option>
-            <option value="undergraduate">Undergraduate</option>
-            <option value="graduate">Graduate</option>
-            <option value="professional">Professional</option>
+            <option value="">-- Sélectionnez un niveau --</option>
+            <option value="highschool">Lycée</option>
+            <option value="undergraduate">Licence</option>
+            <option value="graduate">Master</option>
+            <option value="professional">Professionnel</option>
           </select>
         </div>
       </form>
@@ -253,40 +258,46 @@
 
     <!-- CTA -->
     <div class="ctaa">
-      <button type="submit">Enroll Now</button>
+      <button type="submit">S’inscrire maintenant</button>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-container">
-      <!-- Logo & About -->
-      <div class="footer-col">
-        <img src="logo.png" alt="Tengalous Academy Logo" class="footer-logo">
-        <p>Empowering future leaders through quality education and professional formations.</p>
-      </div>
-      <!-- Quick Links -->
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="courses.html">Courses</a></li>
-          <li><a href="formations.html">Formations</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <!-- Contact Info -->
-      <div class="footer-col">
-        <h4>Contact Us</h4>
-        <p>Email: info@tengalousacademy.com</p>
-        <p>Phone: +213 123 456 789</p>
-        <p>Algiers, Algeria</p>
-      </div>
+   <div class="footer-container">
+    
+    <!-- Logo & About -->
+    <div class="footer-col">
+      <img src="logo.png" alt="Logo Tengalous Academy" class="footer-logo">
+      <p>Former les leaders de demain grâce à une éducation de qualité et des formations professionnelles.</p>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Tengalous Academy. All Rights Reserved.</p>
+
+    <!-- Liens rapides -->
+    <div class="footer-col">
+      <h4>Liens rapides</h4>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="courses.html">Cours</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </footer>
+
+    <!-- Contact Info -->
+    <div class="footer-col">
+      <h4>Contactez-nous</h4>
+      <p>Email : ecole.tengalous@gmail.com</p>
+      <p>Téléphone : +213 550 42 69 68</p>
+      <p>Alger, Algérie</p>
+    </div>
+
+  </div>
+
+  <!-- Bas de page -->
+  <div class="footer-bottom">
+    <p>© 2025 Tengalous Academy. Tous droits réservés.</p>
+  </div>
+</footer>
 
   <script>
     const menuToggle = document.getElementById("menu-toggle");

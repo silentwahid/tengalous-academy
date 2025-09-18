@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-  <title>Tengalous Academy - Courses</title>
+  <title>Tengalous Academy - Cours</title>
   <style>
   
     /* Hero */
@@ -104,12 +104,11 @@
 <body>
 
   <!-- Navbar -->
-   <!-- Navbar -->
   <nav>
-    <div><img class="logo" src="logo.png" alt="Tengalous Logo"></div>
+    <div><img class="logo" src="logo.png" alt="Logo Tengalous"></div>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="courses.html">Courses</a></li>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="courses.html">Cours</a></li>
       <li><a href="formations.html">Formations</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -122,124 +121,81 @@
 
   <!-- Hero -->
   <section class="hero">
-    <h1>Our Courses</h1>
+    <h1>Nos Cours</h1>
   </section>
 
   <!-- Courses Section -->
   <section class="courses">
-    <h2>University Courses</h2>
+    <h2>Cours Universitaires</h2>
     <div class="courses-container">
 
       <!-- Math -->
       <div class="course-card">
         <div class="course-icon">📐</div>
-        <h3>Mathematics</h3>
-        <p>Comprehensive math courses covering algebra, calculus, statistics, and advanced problem-solving for university students.</p>
-        <a href="#" class="btn">Learn More</a>
+        <h3>Mathématiques</h3>
+        <p>Cours complets de mathématiques couvrant l’algèbre, le calcul, les statistiques et la résolution avancée de problèmes pour étudiants universitaires.</p>
+        <a href="#" class="btn">Voir plus</a>
       </div>
 
       <!-- Physics -->
       <div class="course-card">
         <div class="course-icon">⚛️</div>
-        <h3>Physics</h3>
-        <p>Explore the world of mechanics, thermodynamics, quantum physics, and more with our expert-led physics programs.</p>
-        <a href="#" class="btn">Learn More</a>
+        <h3>Physique</h3>
+        <p>Explorez le monde de la mécanique, de la thermodynamique, de la physique quantique et plus encore grâce à nos programmes dirigés par des experts.</p>
+        <a href="#" class="btn">Voir plus</a>
       </div>
 
     </div>
   </section>
 
 
-
-
-
 <!-- Footer -->
 <footer class="footer">
-  <div class="footer-container">
+   <div class="footer-container">
     
     <!-- Logo & About -->
     <div class="footer-col">
-      <img src="logo.png" alt="Tengalous Academy Logo" class="footer-logo">
-      <p>Empowering future leaders through quality education and professional formations.</p>
+      <img src="logo.png" alt="Logo Tengalous Academy" class="footer-logo">
+      <p>Former les leaders de demain grâce à une éducation de qualité et des formations professionnelles.</p>
     </div>
 
     <!-- Quick Links -->
     <div class="footer-col">
-      <h4>Quick Links</h4>
+      <h4>Liens rapides</h4>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#courses">Courses</a></li>
-        <li><a href="#formations">Formations</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="courses.html">Cours</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
 
     <!-- Contact Info -->
     <div class="footer-col">
-      <h4>Contact Us</h4>
-      <p>Email: info@tengalousacademy.com</p>
-      <p>Phone: +213 123 456 789</p>
-      <p>Algiers, Algeria</p>
+      <h4>Contactez-nous</h4>
+      <p>Email : ecole.tengalous@gmail.com</p>
+      <p>Téléphone : +213 550 42 69 68</p>
+      <p>Alger, Algérie</p>
     </div>
 
   </div>
 
   <!-- Bottom Bar -->
   <div class="footer-bottom">
-    <p>© 2025 Tengalous Academy. All Rights Reserved.</p>
+    <p>© 2025 Tengalous Academy. Tous droits réservés.</p>
   </div>
 </footer>
 
 
-
-
-
-
-
-
-  
 <script>
-  const counters = document.querySelectorAll(".counter");
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.querySelector("nav ul");
 
-  counters.forEach(counter => {
-    counter.innerText = "0";
-
-    const updateCounter = () => {
-      const target = +counter.getAttribute("data-target");
-      const current = +counter.innerText;
-      const increment = target / 100;
-
-      if (current < target) {
-        counter.innerText = `${Math.ceil(current + increment)}`;
-        setTimeout(updateCounter, 30);
-      } else {
-        counter.innerText = target;
-      }
-    };
-
-    // Trigger animation on scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          updateCounter();
-          observer.unobserve(counter);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    observer.observe(counter);
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    menuToggle.classList.toggle("open");
   });
 </script>
-
-  <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.querySelector("nav ul");
-
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-      menuToggle.classList.toggle("open");
-    });
-  </script>
 
 </body>
 </html>
