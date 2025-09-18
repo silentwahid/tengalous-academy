@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-  <title>Tengalous Academy - Home</title>
+  <title>Tengalous Academy - Formations</title>
   <style>
-    
     /* Hero */
     .hero {
       height: 50vh;
@@ -33,6 +32,61 @@
       50% {background-position: 100% 50%;}
       100% {background-position: 0% 50%;}
     }
+
+    /* Formation Card */
+    .formations {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+      width: 350px;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h2 {
+      color: #004aad;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .card p {
+      margin: 0 1rem 1rem;
+      color: #555;
+    }
+
+    .see-more {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding: 0.6rem 1.5rem;
+      background: #004aad;
+      color: white;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .see-more:hover {
+      background: #00bf63;
+    }
   </style>
 </head>
 <body>
@@ -43,7 +97,7 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="courses.html">Courses</a></li>
-      <li><a href="formations.html">Formations</a></li>
+      <li><a href="formations.html" class="active">Formations</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="menu-toggle" id="menu-toggle">
@@ -53,138 +107,52 @@
     </div>
   </nav>
 
-
-
-
-
-
-
-
- <header class="hero">
+  <!-- Hero -->
+  <header class="hero">
     <h1>Professional Formations</h1> 
-    <p>Our specialized training programs are coming soon. Stay tuned!</p>
+    <p>Explore our specialized training programs designed for your growth.</p>
   </header>
 
- 
-
-
-
-
+  <!-- Formations Section -->
   <section class="formations">
     <div class="card">
-      <h2>Business Formation</h2>
-      <p>Enhance your career with professional business skills.</p>
-      <span class="coming-soon">Coming Soon</span>
-    </div>
-    <div class="card">
-      <h2>IT & Technology</h2>
-      <p>Learn cutting-edge technology and IT skills.</p>
-      <span class="coming-soon">Coming Soon</span>
-    </div>
-    <div class="card">
-      <h2>Languages</h2>
-      <p>Master new languages for professional and personal growth.</p>
-      <span class="coming-soon">Coming Soon</span>
-    </div>
-    <div class="card">
-      <h2>Vocational Training</h2>
-      <p>Hands-on training to boost your expertise in various fields.</p>
-      <span class="coming-soon">Coming Soon</span>
+      <img src="english.jpg" alt="English Formation">
+      <h2>English Formation</h2>
+      <p>Improve your English skills for academic and professional success.</p>
+      <a href="english-formation.html" class="see-more">See More</a>
     </div>
   </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-container">
-    
-    <!-- Logo & About -->
-    <div class="footer-col">
-      <img src="logo.png" alt="Tengalous Academy Logo" class="footer-logo">
-      <p>Empowering future leaders through quality education and professional formations.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo & About -->
+      <div class="footer-col">
+        <img src="logo.png" alt="Tengalous Academy Logo" class="footer-logo">
+        <p>Empowering future leaders through quality education and professional formations.</p>
+      </div>
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="formations.html">Formations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <p>Email: info@tengalousacademy.com</p>
+        <p>Phone: +213 123 456 789</p>
+        <p>Algiers, Algeria</p>
+      </div>
     </div>
-
-    <!-- Quick Links -->
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#courses">Courses</a></li>
-        <li><a href="#formations">Formations</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>© 2025 Tengalous Academy. All Rights Reserved.</p>
     </div>
-
-    <!-- Contact Info -->
-    <div class="footer-col">
-      <h4>Contact Us</h4>
-      <p>Email: info@tengalousacademy.com</p>
-      <p>Phone: +213 123 456 789</p>
-      <p>Algiers, Algeria</p>
-    </div>
-
-  </div>
-
-  <!-- Bottom Bar -->
-  <div class="footer-bottom">
-    <p>© 2025 Tengalous Academy. All Rights Reserved.</p>
-  </div>
-</footer>
-
-
-
-
-
-
-<script>
-  const counters = document.querySelectorAll(".counter");
-
-  counters.forEach(counter => {
-    counter.innerText = "0";
-
-    const updateCounter = () => {
-      const target = +counter.getAttribute("data-target");
-      const current = +counter.innerText;
-      const increment = target / 100;
-
-      if (current < target) {
-        counter.innerText = `${Math.ceil(current + increment)}`;
-        setTimeout(updateCounter, 30);
-      } else {
-        counter.innerText = target;
-      }
-    };
-
-    // Trigger animation on scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          updateCounter();
-          observer.unobserve(counter);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    observer.observe(counter);
-  });
-</script>
-
+  </footer>
 
   <script>
     const menuToggle = document.getElementById("menu-toggle");
@@ -195,6 +163,6 @@
       menuToggle.classList.toggle("open");
     });
   </script>
-
 </body>
 </html>
+ 

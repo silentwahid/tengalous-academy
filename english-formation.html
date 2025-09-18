@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Formation - Tengalous Academy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <style>
+    /* Hero */
+    .hero {
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #004aad, #5de0e6, #00bf63);
+      background-size: 300% 300%;
+      animation: gradientFlow 12s ease infinite;
+      color: white;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    @keyframes gradientFlow {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Course Section */
+    .course-section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: left;
+      animation: slideUp 1.2s ease;
+    }
+
+    .course-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #004aad;
+    }
+
+    .course-details ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .course-details li {
+      margin: 12px 0;
+      padding-left: 30px;
+      position: relative;
+      font-size: 1.1rem;
+    }
+
+    .course-details li::before {
+      content: "✔";
+      color: #00bf63;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* Form */
+    .enroll-form {
+      margin-top: 40px;
+      background: #f9f9f9;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .enroll-form h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #004aad;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .form-group input, 
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #00bf63;
+      box-shadow: 0 0 5px rgba(0,191,99,0.3);
+    }
+
+    /* CTA Button */
+    .ctaa {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .ctaa button {
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, #004aad, #00bf63);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .ctaa button:hover {
+      background: linear-gradient(135deg, #00bf63, #004aad);
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+
+
+
+    /* Image Gallery */
+.image-gallery {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery-container img {
+  width: 180px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div><img class="logo" src="logo.png" alt="Tengalous Logo"></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="formations.html" class="active">Formations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>English Formation</h1>
+    <p>Headway 5th Edition (Beginner to Upper Intermediate)</p>
+  </section>
+
+
+
+
+  <!-- Image Gallery -->
+  <section class="image-gallery">
+    <div class="gallery-container">
+      <img src="111.jpg" alt="English Class 1">
+      <img src="112.jpg" alt="English Class 2">
+      <img src="113.jpg" alt="English Class 3">
+    </div>
+  </section>
+
+
+
+
+  <!-- Course Section -->
+  <section class="course-section">
+    <h2>About this Formation</h2>
+    <div class="course-details">
+      <ul>
+        <li>Takes learners from first steps in English to confident everyday communication, with a clear and trusted progression.</li>
+        <li>Balances all skills — speaking, listening, reading, and writing — using real-life situations and engaging topics.</li>
+        <li>Builds both grammar and vocabulary step by step, preparing learners to communicate naturally, also to succeed in exams.</li>
+        <li>Supported by modern digital resources (audio, video, interactive tools) and a solid framework that can also prepare learners for international exams like IELTS.</li>
+      </ul>
+    </div>
+
+    <!-- Enrollment Form -->
+    <div class="enroll-form">
+      <h3>Register for this Formation</h3>
+      <form>
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first-name" required>
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="last-name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+213..." required>
+        </div>
+        <div class="form-group">
+          <label for="academic-level">Academic Level</label>
+          <select id="academic-level" name="academic-level" required>
+            <option value="">-- Select Level --</option>
+            <option value="highschool">High School</option>
+            <option value="undergraduate">Undergraduate</option>
+            <option value="graduate">Graduate</option>
+            <option value="professional">Professional</option>
+          </select>
+        </div>
+      </form>
+    </div>
+
+    <!-- CTA -->
+    <div class="ctaa">
+      <button type="submit">Enroll Now</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo & About -->
+      <div class="footer-col">
+        <img src="logo.png" alt="Tengalous Academy Logo" class="footer-logo">
+        <p>Empowering future leaders through quality education and professional formations.</p>
+      </div>
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="formations.html">Formations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <p>Email: info@tengalousacademy.com</p>
+        <p>Phone: +213 123 456 789</p>
+        <p>Algiers, Algeria</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Tengalous Academy. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.querySelector("nav ul");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      menuToggle.classList.toggle("open");
+    });
+  </script>
+</body>
+</html>
