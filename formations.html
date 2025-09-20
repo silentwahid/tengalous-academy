@@ -12,7 +12,7 @@
       text-decoration: none;
     }
      .hero {
-      height: 60vh;
+      height: 95vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -22,6 +22,9 @@
       color: rgb(0, 0, 0);
       padding: 0 20px;
       position: relative;
+      margin-top: 50px;
+
+
     }
     
  
@@ -51,19 +54,22 @@
       margin-right: auto;
     }
 
-    .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.55); /* light overlay for readability */
-  z-index: 0;
-}
 
 .hero-content {
   position: relative;
   z-index: 1;
 }
 
+
+
+
+@media (max-width: 480px) {
+    .hero {
+        height: 30vh;
+        width: 100%;
+        margin-top: 100px;
+    }
+}
 
     /* Formation Card */
     .formations {
@@ -140,10 +146,8 @@
   </nav>
 
   <!-- Hero -->
-  <section style="background: url(bg.jpg) no-repeat center center/cover;" class="hero">
-    <h1>Formations Professionnelles</h1> 
-    <p>Découvrez nos programmes spécialisés conçus pour votre réussite.</p>
-  </section>
+  <section style="background: url(langues\ etrangeres.jpg) no-repeat center center/cover;" class="hero">
+      </section>
 
   <!-- Formations Section -->
   <section class="formations">
