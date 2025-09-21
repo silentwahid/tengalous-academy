@@ -455,6 +455,7 @@
       <li><a href="index.html">Accueil</a></li>
       <li><a href="courses.html">Cours</a></li>
       <li><a href="formations.html" class="active">Formations</a></li>
+      <li><a href="about.html" class="active">À Propos</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="menu-toggle" id="menu-toggle">
@@ -477,7 +478,7 @@
     <div class="specialization-top">
       <div class="meta">
         <span>Niveau : Débutant à Avancé</span>
-        <span>Durée : 8 cours / ~1 mois</span>
+        <span>Durée : 15 mois</span>
         <span>2 séances/semaine • 4000 DA/mois</span>
       </div>
       <p>Cette spécialisation vous aide à développer votre expression écrite et orale en anglais professionnel, communiquer avec confiance lors de réunions, présentations et correspondances d'affaires, et vous préparer pour des contextes internationaux.</p>
@@ -521,7 +522,9 @@
     <!-- Formulaire d'inscription -->
     <div class="enroll-form">
       <h3>Inscrivez-vous à cette formation</h3>
-      <form id="enrollment-form" action="#" method="POST">
+      <form action="https://usebasin.com/f/6f2ccbdf9c35" method="POST">
+  <!-- Disable CAPTCHA from formsubmit -->
+  <input type="hidden" name="_captcha" value="false">
         <div class="form-group">
           <label for="first-name">Prénom</label>
           <input type="text" id="first-name" name="first-name" required>
@@ -535,23 +538,25 @@
           <input type="tel" id="phone" name="phone" placeholder="+213..." required>
         </div>
         <div class="form-group">
-          <label for="academic-level">Niveau académique</label>
-          <select id="academic-level" name="academic-level" required>
-            <option value="">-- Sélectionnez un niveau --</option>
-            <option value="highschool">Lycée</option>
-            <option value="undergraduate">Licence</option>
-            <option value="graduate">Master</option>
-            <option value="professional">Professionnel</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="academic-level">Fréquentation</label>
-          <select id="academic-level" name="academic-level" required>
-            <option value="">-- Sélectionnez --</option>
-            <option value="présentiel">Présentiel</option>
-            <option value="en ligne">En Ligne</option>
-          </select>
-        </div>
+  <label for="academic-level">Niveau académique</label>
+  <select id="academic-level" name="academic-level" required>
+    <option value="">-- Sélectionnez un niveau --</option>
+    <option value="cem">CEM</option>
+    <option value="highschool">Lycée</option>
+    <option value="undergraduate">Licence</option>
+    <option value="graduate">Master</option>
+    <option value="professional">Professionnel</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="attendance">Fréquentation</label>
+  <select id="attendance" name="attendance" required>
+    <option value="">-- Sélectionnez --</option>
+    <option value="présentiel">Présentiel</option>
+    <option value="en ligne">En Ligne</option>
+  </select>
+</div>
         <div class="ctaa">
           <button type="submit">S'inscrire maintenant</button>
         </div>
@@ -571,6 +576,7 @@
           <li><a href="index.html">Accueil</a></li>
           <li><a href="courses.html">Cours</a></li>
           <li><a href="formations.html">Formations</a></li>
+      <li><a href="about.html" class="active">À Propos</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
