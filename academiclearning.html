@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formations Académiques - Tengalous Academy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* === GLOBAL STYLES === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #004aad;
+      --secondary: #00bf63;
+      --accent: #5de0e6;
+      --light: #f9f9f9;
+      --dark: #333333;
+      --university: #8B0000; /* USTHB red color */
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* === NAVIGATION === */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: #fff;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav .logo {
+      height: 45px;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      transition: color 0.3s;
+      position: relative;
+    }
+    
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: var(--secondary);
+    }
+    
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: width 0.3s ease;
+    }
+    
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+      width: 100%;
+    }
+    
+    /* === HERO SECTION === */
+    .academic-hero {
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary));
+      background-size: 300% 300%;
+      animation: gradientFlow 12s ease infinite;
+      color: white;
+      padding: 0 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .academic-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .academic-hero-content {
+      max-width: 800px;
+      z-index: 1;
+    }
+    
+    .academic-hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease-out 0.5s forwards;
+    }
+    
+    .academic-hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease-out 0.8s forwards;
+    }
+    
+    .university-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 20px;
+      border-radius: 30px;
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out 1.1s forwards;
+    }
+    
+    .university-badge img {
+      height: 30px;
+    }
+    
+    /* Floating elements animation */
+    .floating-elements {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    
+    .floating-element {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+    
+    .floating-element:nth-child(1) {
+      width: 80px;
+      height: 80px;
+      top: 20%;
+      left: 10%;
+      animation: float 15s ease-in-out infinite;
+    }
+    
+    .floating-element:nth-child(2) {
+      width: 50px;
+      height: 50px;
+      top: 60%;
+      left: 80%;
+      animation: float 12s ease-in-out infinite reverse;
+    }
+    
+    .floating-element:nth-child(3) {
+      width: 70px;
+      height: 70px;
+      top: 70%;
+      left: 15%;
+      animation: float 18s ease-in-out infinite 1s;
+    }
+    
+    /* === PARTNERSHIP SECTION === */
+    .partnership-section {
+      padding: 80px 0;
+      background: white;
+    }
+    
+    .partnership-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    
+    .partnership-text {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    
+    .partnership-text.animate {
+      animation: fadeInLeft 1s ease forwards;
+    }
+    
+    .partnership-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    
+    .partnership-logo.animate {
+      animation: fadeInRight 1s ease forwards;
+    }
+    
+    .partnership-logo img {
+      max-width: 300px;
+      height: auto;
+      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+    }
+    
+    /* === COURSES SECTION === */
+    .courses-section {
+      padding: 80px 0;
+      background: var(--light);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .section-header.animate h2 {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .section-header p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #555;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .section-header.animate p {
+      animation: fadeInUp 0.8s ease 0.3s forwards;
+    }
+    
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+    
+    .course-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    .course-card.animate {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .course-card:nth-child(1).animate {
+      animation-delay: 0.2s;
+    }
+    
+    .course-card:nth-child(2).animate {
+      animation-delay: 0.4s;
+    }
+    
+    .course-card:nth-child(3).animate {
+      animation-delay: 0.6s;
+    }
+    
+    .course-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    
+    .course-header {
+      height: 200px;
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .course-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0)
+      );
+      transform: rotate(30deg);
+      animation: shine 3s infinite linear;
+    }
+    
+    .course-body {
+      padding: 25px;
+    }
+    
+    .course-body h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    
+    .course-body p {
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    
+    .course-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    
+    .course-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .course-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .course-tag {
+      background: rgba(0, 74, 173, 0.1);
+      color: var(--primary);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .course-button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      text-decoration: none;
+    }
+    
+    .course-button:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+    }
+    
+    /* === BENEFITS SECTION === */
+    .benefits-section {
+      padding: 80px 0;
+      background: white;
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .benefit-card {
+      text-align: center;
+      padding: 30px 20px;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    .benefit-card.animate {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .benefit-card:nth-child(1).animate {
+      animation-delay: 0.1s;
+    }
+    
+    .benefit-card:nth-child(2).animate {
+      animation-delay: 0.2s;
+    }
+    
+    .benefit-card:nth-child(3).animate {
+      animation-delay: 0.3s;
+    }
+    
+    .benefit-card:nth-child(4).animate {
+      animation-delay: 0.4s;
+    }
+    
+    .benefit-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 2rem;
+    }
+    
+    .benefit-card h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+    
+    .benefit-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    /* === CTA SECTION === */
+    .cta-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .cta-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .cta-content.animate h2 {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .cta-content.animate p {
+      animation: fadeInUp 0.8s ease 0.3s forwards;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      background: white;
+      color: var(--primary);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .cta-content.animate .cta-button {
+      animation: fadeInUp 0.8s ease 0.6s forwards;
+    }
+    
+    .cta-button:hover {
+      background: var(--secondary);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgb(0, 0, 0);
+    }
+    
+    /* Animated background elements for CTA */
+    .cta-bg-element {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .cta-bg-element:nth-child(1) {
+      width: 100px;
+      height: 100px;
+      top: -30px;
+      left: 10%;
+      animation: float 15s ease-in-out infinite;
+    }
+    
+    .cta-bg-element:nth-child(2) {
+      width: 150px;
+      height: 150px;
+      bottom: -50px;
+      right: 10%;
+      animation: float 18s ease-in-out infinite reverse;
+    }
+    
+    /* === FOOTER === */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 50px 0 20px;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-col {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .footer-col.animate {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .footer-col:nth-child(1).animate {
+      animation-delay: 0.1s;
+    }
+    
+    .footer-col:nth-child(2).animate {
+      animation-delay: 0.2s;
+    }
+    
+    .footer-col:nth-child(3).animate {
+      animation-delay: 0.3s;
+    }
+    
+    .footer-col:nth-child(4).animate {
+      animation-delay: 0.4s;
+    }
+    
+    .footer-col h4 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+    
+    .footer-col p {
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+    
+    .footer-col ul {
+      list-style: none;
+    }
+    
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-col ul li a {
+      text-decoration: none;
+      color: #ddd;
+      transition: color 0.3s;
+    }
+    
+    .footer-col ul li a:hover {
+      color: var(--secondary);
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    
+    /* === ANIMATIONS === */
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(10deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+    
+    @keyframes shine {
+      0% {
+        transform: translateX(-100%) rotate(30deg);
+      }
+      100% {
+        transform: translateX(100%) rotate(30deg);
+      }
+    }
+    
+    /* Auto animation classes */
+    .auto-rotate {
+      animation: autoRotate 20s linear infinite;
+    }
+    
+    @keyframes autoRotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    /* === RESPONSIVE DESIGN === */
+    @media (max-width: 992px) {
+      .partnership-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .partnership-logo {
+        order: -1;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .academic-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .academic-hero p {
+        font-size: 1.1rem;
+      }
+      
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .section-header h2 {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .academic-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .academic-hero {
+        height: 70vh;
+      }
+      
+      .course-header {
+        height: 150px;
+        font-size: 3rem;
+      }
+    }
+
+
+       /* Filter Buttons */
+    .filter-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 8px 15px;
+      background: #f5f5f5;
+      border: 1px solid #004aad;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #004aad;
+      font-weight: 600;
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-3px);
+      background: #004aad;
+      color: white;
+    }
+
+    .filter-btn.active {
+      background: #00bf63;
+      color: white;
+      border-color: #00bf63;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div><img class="logo" src="logo.png" alt="Logo Tengalous Academy"></div>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="courses.html">Cours</a></li>
+      <li><a href="formations.html">Formations</a></li>
+      <li><a href="academic.html" class="active">Formations Académiques</a></li>
+      <li><a href="about.html">À Propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="academic-hero">
+    <div class="floating-elements">
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+    </div>
+    <div class="academic-hero-content">
+      <h1>Formations Académiques d'Excellence</h1>
+      <p>Programmes certifiés en partenariat avec l'Université des Sciences et de la Technologie Houari Boumediene (USTHB)</p>
+      <div class="university-badge">
+        <i class="fas fa-university"></i>
+        <span>En partenariat avec USTHB</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnership Section -->
+  <section class="partnership-section">
+    <div class="container">
+      <div class="partnership-content">
+        <div class="partnership-text">
+          <h2>Partenariat Stratégique avec USTHB</h2>
+          <p>Tengalous Academy s'associe à l'Université des Sciences et de la Technologie Houari Boumediene (USTHB) pour offrir des formations académiques d'excellence dans les domaines les plus demandés du marché.</p>
+          <p>Nos programmes sont conçus par des experts de l'USTHB et adaptés aux besoins actuels de l'industrie, combinant rigueur académique et applicabilité pratique.</p>
+        </div>
+        <div class="partnership-logo">
+          <!-- Placeholder for USTHB logo -->
+          <div style="width: 300px; height: 200px;  display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; border-radius: 10px;">
+            <img src="USTHB.jpg" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section class="courses-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nos Formations Académiques</h2>
+        <p>Découvrez nos programmes certifiés conçus en collaboration avec les experts de l'USTHB</p>
+      </div>
+
+      
+<div class="filter-options">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="data-science">Data Science</button>
+      <button class="filter-btn" data-category="web-dev">Web Dev</button>
+      <button class="filter-btn" data-category="data-analytics">Data Analytics</button>
+      <button class="filter-btn" data-category="ai-engineering">AI Engineering</button>
+    </div>
+
+      
+      <div class="courses-grid">
+        <!-- Data Science Course -->
+        <div  data-category="data-science"  class="course-card">
+          <div class="course-header">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="course-body">
+            <h3>Data Science</h3>
+            <p>Maîtrisez l'analyse des données, l'apprentissage automatique et la visualisation avec ce programme complet de science des données.</p>
+            <div class="course-meta">
+              <span><i class="far fa-clock"></i> 6 mois</span>
+              <span><i class="fas fa-user-graduate"></i> Niveau Licence</span>
+            </div>
+            <div class="course-tags">
+              <span class="course-tag">Python</span>
+              <span class="course-tag">Machine Learning</span>
+              <span class="course-tag">Big Data</span>
+            </div>
+            <a href="#" class="course-button">Découvrir le programme</a>
+          </div>
+        </div>
+        
+        <!-- Web Development Course -->
+        <div  data-category="web-dev" class="course-card">
+          <div class="course-header">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="course-body">
+            <h3>Développement Web</h3>
+            <p>Devenez développeur full-stack en maîtrisant les technologies front-end et back-end les plus demandées sur le marché.</p>
+            <div class="course-meta">
+              <span><i class="far fa-clock"></i> 8 mois</span>
+              <span><i class="fas fa-user-graduate"></i> Tous niveaux</span>
+            </div>
+            <div class="course-tags">
+              <span class="course-tag">JavaScript</span>
+              <span class="course-tag">React</span>
+              <span class="course-tag">Node.js</span>
+            </div>
+            <a href="#" class="course-button">Découvrir le programme</a>
+          </div>
+        </div>
+        
+        <!-- Data Analytics Course -->
+        <div data-category="data-analytics" class="course-card">
+          <div class="course-header">
+            <i class="fas fa-database"></i>
+          </div>
+          <div class="course-body">
+            <h3>Data Analytics</h3>
+            <p>Apprenez à extraire, analyser et interpréter les données pour prendre des décisions stratégiques éclairées.</p>
+            <div class="course-meta">
+              <span><i class="far fa-clock"></i> 4 mois</span>
+              <span><i class="fas fa-user-graduate"></i> Niveau Bac+2</span>
+            </div>
+            <div class="course-tags">
+              <span class="course-tag">SQL</span>
+              <span class="course-tag">Tableau</span>
+              <span class="course-tag">Statistiques</span>
+            </div>
+            <a href="#" class="course-button">Découvrir le programme</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Avantages de nos Formations Académiques</h2>
+        <p>Pourquoi choisir nos programmes en partenariat avec USTHB</p>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3>Certification Reconue</h3>
+          <p>Diplômes et certifications reconnus par l'USTHB et valorisés sur le marché du travail.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3>Enseignants Experts</h3>
+          <p>Formateurs issus de l'USTHB et professionnels en activité dans leur domaine.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3>Insertion Professionnelle</h3>
+          <p>Accompagnement personnalisé vers l'emploi avec notre réseau de partenaires entreprises.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-laptop-house"></i>
+          </div>
+          <h3>Flexibilité</h3>
+          <p>Formations disponibles en présentiel et à distance pour s'adapter à votre emploi du temps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-bg-element"></div>
+    <div class="cta-bg-element"></div>
+    <div class="container">
+      <div class="cta-content">
+        <h2>Prêt à booster votre carrière?</h2>
+        <p>Rejoignez nos formations académiques d'excellence et bénéficiez de l'expertise USTHB</p>
+        <a href="contact.html" class="cta-button">S'inscrire Maintenant</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>À Propos de Tengalous Academy</h4>
+          <p>Plateforme leader de formation en Algérie, connectant les apprenants aux meilleurs formateurs et institutions.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Liens Rapides</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="courses.html">Cours</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="academic.html">Formations Académiques</a></li>
+            <li><a href="about.html">À Propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Formations Académiques</h4>
+          <ul>
+            <li><a href="#">Data Science</a></li>
+            <li><a href="#">Développement Web</a></li>
+            <li><a href="#">Data Analytics</a></li>
+            <li><a href="#">Cybersécurité</a></li>
+            <li><a href="#">Intelligence Artificielle</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p><i class="fas fa-envelope"></i> info@tengalousacademy.com</p>
+          <p><i class="fas fa-phone"></i> +213 550 42 69 68</p>
+          <p><i class="fas fa-map-marker-alt"></i> Alger, Algérie</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Tengalous Academy. Tous droits réservés. | En partenariat avec USTHB</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll animation function
+    function animateOnScroll() {
+      const elements = document.querySelectorAll(
+        '.partnership-text, .partnership-logo, .section-header, .course-card, .benefit-card, .cta-content, .footer-col'
+      );
+      
+      elements.forEach(element => {
+        const position = element.getBoundingClientRect();
+        
+        // If element is in viewport
+        if(position.top < window.innerHeight - 100) {
+          element.classList.add('animate');
+        }
+      });
+    }
+    
+    // Auto animations (without scroll)
+    function startAutoAnimations() {
+      // Add auto-rotate to some elements
+      const rotateElements = document.querySelectorAll('.course-header i');
+      rotateElements.forEach(el => {
+        el.classList.add('auto-rotate');
+      });
+      
+      // Add pulse animation to CTA button on hover
+      const ctaButton = document.querySelector('.cta-button');
+      ctaButton.addEventListener('mouseenter', function() {
+        this.style.animation = 'pulse 1s ease infinite';
+      });
+      
+      ctaButton.addEventListener('mouseleave', function() {
+        this.style.animation = '';
+      });
+    }
+    
+    // Initialize animations when page loads
+    window.addEventListener('DOMContentLoaded', function() {
+      // Start auto animations
+      startAutoAnimations();
+      
+      // Trigger first scroll check
+      animateOnScroll();
+    });
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', animateOnScroll);
+    
+    // Simple pulse animation for CTA button
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes pulse {
+        0% { transform: translateY(-3px) scale(1); }
+        50% { transform: translateY(-3px) scale(1.05); }
+        100% { transform: translateY(-3px) scale(1); }
+      }
+    `;
+    document.head.appendChild(style);
+
+
+  </script>
+
+
+<script>
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const courseCards = document.querySelectorAll(".course-card");
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // Remove active class from all buttons
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const category = btn.dataset.category;
+
+      courseCards.forEach(card => {
+        const cardCategory = card.getAttribute("data-category");
+
+        if (category === "all" || cardCategory === category) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+ 
